@@ -1,0 +1,39 @@
+<p>displaytableforinput works!</p>
+
+<form [formGroup]="employeeForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="fname">Name:</label>
+        <input type="text" formControlName="fname" id="fname" class="form-control" />
+    </div>
+
+    <br>
+    <div class="form-group">
+        gender: <input type="number" formControlName="gender" class="form-control" />
+
+
+    </div>
+
+    <button class="btn btn-primary" type="Submit">Submit</button>
+</form>
+<br>
+------------------------------------------------------------------------------------------------------------------------
+<br>
+<table>
+    <tr>
+        <th>index</th>
+        <th>Name</th>
+        <th>Gander</th>
+    </tr>
+    <tr *ngFor="let employee of listOfEmployee;let index=index">
+        <td>{{index}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.genderInString}}</td>
+    </tr>
+</table>
+<br>
+Male:{{maleCount}}
+<br>
+Female:{{femaleCount}}
+<br>
+------------------------------------------------------------------------------------------------------------------------
+<br>

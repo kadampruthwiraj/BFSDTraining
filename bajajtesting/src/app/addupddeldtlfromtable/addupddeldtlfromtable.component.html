@@ -1,0 +1,45 @@
+<p>addupddeldtlfromtable works!</p>
+
+
+<form [formGroup]="employeeDetailForm" (ngSubmit)="onSubmit()">
+
+    <input type="text" id="name" name="name" formControlName="name" placeholder="first name" /><br>
+
+
+    <input type="radio" id="gender" name="gender" formControlName="gender" value="Male">Male<br>
+    <input type="radio" id="gender" name="gender" formControlName="gender" value="Female">FeMale<br>
+
+    <select id="country" name="country" formControlName="country" value="Country">
+        <option value="0">Country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+    </select>
+    <br>
+    <input type="checkbox" id="langng" name="langng" formControlName="langng" value="ng">Ng<br>
+    <input type="checkbox" id="langjava" name="langjava" formControlName="langjava" value="Java">Java<br>
+    <button>submit</button>
+</form>
+
+<br>
+
+<table style=" border: 1px solid;">
+    <tr style=" border: 1px solid;">
+        <th style=" border: 1px solid;">Name</th>
+        <th style=" border: 1px solid;">Gender</th>
+        <th style=" border: 1px solid;">Country</th>
+        <th style=" border: 1px solid;">Ng</th>
+        <th style=" border: 1px solid;">Java</th>
+        <th style=" border: 1px solid;">Update</th>
+        <th style=" border: 1px solid;">Delete</th>
+    </tr>
+    <tr style=" border: 1px solid;" *ngFor="let emp of listOfEmployee;let i =index;">
+        <td style=" border: 1px solid;">{{emp.name}}</td>
+        <td style=" border: 1px solid;">{{emp.gender}}</td>
+        <td style=" border: 1px solid;">{{emp.country}}</td>
+        <td style=" border: 1px solid;">{{emp.langng}}</td>
+        <td style=" border: 1px solid;">{{emp.langjava}}</td>
+        <th style=" border: 1px solid;"><button (click)="update(i)">Update</button></th>
+        <th style=" border: 1px solid;"><button (click)="delete(i)">Delete</button></th>
+    </tr>
+
+</table>

@@ -1,0 +1,65 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+        <label for="fname">Name:</label>
+        <input type="text" formControlName="fname" id="fname" class="form-control" />
+
+
+        <!-- <div *ngIf="f['fname'].touched && f['fname'].invalid" class="alert alert-danger"></div> -->
+        <div *ngIf="f['fname'].errors && f['fname'].errors['required']">Name is required!</div>
+        <div *ngIf="f['fname'].errors && f['fname'].errors['minlength']">Name should be atleast 3 characters!</div>
+    </div>
+    <br>
+    <div class="form-group">
+        Email: <input type="mail" formControlName="email" class="form-control" />
+        <!-- <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger"></div> -->
+        <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required!</div>
+        <div *ngIf="f['email'].errors && f['email'].errors['email']">Please enter a valid email!</div>
+
+    </div>
+    <br>
+    <div class="form-group">
+        Body: <input type="text" formControlName="body" class="form-control" />
+
+        <!-- <div *ngIf="f['body'].touched && f['body'].invalid" class="alert alert-danger"></div> -->
+        <div *ngIf="f['body'].errors && f['body'].errors['required']">Feedback is required!</div>
+
+    </div>
+    <br>
+    <button class="btn btn-primary" [disabled]="form.invalid" type="Submit">Submit</button>
+    {{successMessage}} <br>
+    {{formvalues}}<br>
+
+</form>
+
+<!-- 
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="fname">Name: </label>
+        <input formControlName="fname" id="fname" type="text" class="form-control /">
+        <div *ngIf="f['fname'].touched && f['fname'].invalid" class="alert alert-danger">
+            <div *ngIf="f['fname'].errors && f['fname'].errors['required']">Name is required!</div>
+            <div *ngIf="f['fname'].errors && f['fname'].errors['minlength']">Name should be atleast 3 characters!</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input formControlName="email" id="email" type="text" class="form-control /">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required!</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">Please enter a valid email!</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="body">Feedback: </label>
+        <input formControlName="body" id="body" type="text" class="form-control /">
+        <div *ngIf="f['body'].touched && f['body'].invalid" class="alert alert-danger">
+            <div *ngIf="f['body'].errors && f['body'].errors['required']">Feedback is required!</div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Submit</button>
+
+</form> -->

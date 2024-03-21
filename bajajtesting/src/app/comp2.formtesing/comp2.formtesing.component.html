@@ -1,0 +1,70 @@
+<br><br>
+=========================================================page 4=====================================================
+<h1>comp2.formtesing works!</h1>
+
+<br><br>
+==============================================================================================================
+<br><br>
+<form (ngSubmit)="getData(basicform.value);" #basicform="ngForm">
+    <input type="text" ngModel name="a" palceholder="please enter a" />
+    <input type="text" ngModel name="b" palceholder="please enter a" />
+    <input type="text" ngModel name="c" palceholder="please enter a" />
+    <button>register</button>
+</form>
+<ul>
+    <li>{{userdata.a}}</li>
+    <li>{{userdata.b}}</li>
+    <li>{{userdata.c}}</li>
+</ul>
+<br><br>
+==============================================================================================================
+<br><br>
+Example sync data
+<input type="text" #x placeholder="please enter data" (keyup)="getFunction(x.value)" />
+{{displayX}}
+<br>
+<button (click)="displayXFunction(x.value)">submit</button>
+{{displayY}}
+<br>
+==============================================================================================================
+<br><br>
+<h3>list adding item dynamically</h3>
+<input type="text" ngModel name="listItemInput" #listItem placeholder="please enter data" />
+<button (click)="addItemIntoList(listItem.value)">submit</button>
+
+<br>
+
+<ul *ngFor="let item of itemsfor;let index=index">
+    <li>{{item}}<button (click)="removeItemFromHtmlList(index);">Remove</button></li>
+</ul>
+
+<br>
+==============================================================================================================
+<br><br>
+<h3>add data into table</h3>
+
+<input type="number" ngModel name="quantity" #quantity placeholder="please enter quantity" />
+<input type="number" ngModel name="rate" #rate placeholder="please enter rate" />
+<button (click)="getBillingData(quantity.value,rate.value)">submit</button>
+
+<br>
+
+
+
+<table style=" border: 1px solid;">
+    <tr style=" border: 1px solid;">
+        <th style=" border: 1px solid;">Quantity</th>
+        <th style=" border: 1px solid;">Rate</th>
+        <th style=" border: 1px solid;">amount</th>
+    </tr>
+
+    <tr *ngFor="let x of hotelBill;let index=index" style=" border: 1px solid;">
+        <td style=" border: 1px solid;">{{x.Quantity1}}</td>
+        <td style=" border: 1px solid;">{{x.Rate1}}</td>
+        <td style=" border: 1px solid;">{{x.Amount1}}</td>
+    </tr>
+</table>
+
+<br>
+==============================================================================================================
+<br><br>

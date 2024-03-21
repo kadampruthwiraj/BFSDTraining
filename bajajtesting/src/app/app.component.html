@@ -1,0 +1,165 @@
+<h1>Hello Pruthwiraj</h1>
+
+<button onClick="changeComponent()"></button>
+<br><br>
+<br><br>
+<p>myName 4: <input name="myName" type="text" #myName modelOption="{standalone: true}" /></p>
+<p>Result :- {{myName.value}}</p>
+
+<h2>{{name}}</h2>
+
+<h3>{{toString()}}</h3>
+
+
+<button (click)="getName()">click me</button>
+<button (click)="getName1('pruthwiraj')">click me</button>
+
+<button (click)="getAddition(1,3)">click me</button>
+
+<br><br>
+
+<app-comp1></app-comp1>
+<app-fortesting></app-fortesting>
+
+<app-comp2-formtesing></app-comp2-formtesing>
+<app-com3-formrouter></app-com3-formrouter>
+
+==============================================================================================================
+
+
+<br>
+<h1>childcomponent works!
+</h1>
+<br>
+data from parent
+{{data}}
+
+
+
+<br>
+==============================================================================================================
+<br>
+list from parent
+<ul *ngFor="let fruit of fruits;">
+    <li>{{fruit}}</li>
+</ul>
+<br>
+==============================================================================================================
+<br>
+<b>PARENT</b>
+<br>
+Counter from parent
+<br>
+{{counter}}
+<br>
+<button (click)="incrementCounter()">increment</button> <br>
+<button (click)="decrementCounter()">decrement</button>
+<br>
+<app-childcomponent [item]=data [frutisFromParent]=fruits [childCounter]=counter></app-childcomponent>
+
+<br>
+==============================================================================================================
+<br>
+<h1>handleparentobject works!</h1>
+<br>
+<ul *ngFor="let book of books;">
+    <li>{{book.title}}</li>
+</ul>
+<app-handleparentobject [childBooks]=books></app-handleparentobject>
+
+<br>
+==============================================================================================================
+<br>
+<h1>childtoparent works!</h1>
+<app-childtoparent (dataEvent)="receivedData($event)" (childEvent)="receivedMessage=($event)"
+    (testEvent)="receivedTestEvent=($event)"></app-childtoparent>
+<br>
+handle from method :- {{received}}
+<br>
+handle message directly:- {{receivedMessage}}
+<br>
+handle custome event message directly:- {{receivedTestEvent}}
+<br>
+==============================================================================================================
+<br>
+<h1>twowaycommunication works!</h1>
+<br>
+<input type="text" #parentInputData />
+<button (click)="sendDataFromParentToChild(parentInputData.value)">send data from parent</button>
+<br>
+<app-twowaycommunication [childDataFromParent]="parentMeesageForChild"
+    (childDataForParent)="parentMeesageFormChild=($event)"></app-twowaycommunication>
+<br>
+Data From Child:- {{parentMeesageFormChild}}
+<br>
+<br>
+==============================================================================================================
+<h1>parent works!</h1>
+
+<br>
+<app-parent></app-parent>
+
+<br>
+==============================================================================================================
+
+<br>
+<h1>formvalidations works!</h1>
+<app-formvalidations></app-formvalidations>
+<br>
+==============================================================================================================
+<br>
+<h1>classobjectforchild works!</h1><br>
+<app-classobjectforchild [personFromParent]="personObjectInParent1"
+    (notifyObjectFromChild)="handleChildObject($event)"></app-classobjectforchild>
+
+<br>
+parent showing child class object<br>
+
+{{obj2}}
+
+<br>
+==============================================================================================================
+<br>
+
+<h1>learn pipe works!</h1>
+<!-- <app-learnpipe></app-learnpipe> -->
+<br>
+==============================================================================================================
+<br>
+<h1>router in child works!</h1>
+<button routerLink="/learnpipe">learnpipe </button><br>
+<!-- <button routerLink="/testingComponent">testingComponent </button><br> -->
+<button routerLink="/routeInChild">routeInChild </button><br>
+
+<router-outlet></router-outlet>
+<br>
+==============================================================================================================
+<br>
+<h1>callservice1 works!</h1>
+<app-callservice1></app-callservice1>
+<br>
+==============================================================================================================
+<br>
+
+<h1>app-callservice2</h1>
+<app-callservice2></app-callservice2>
+
+<br>
+==============================================================================================================
+<br>
+
+<h1>displaytableforinput works!</h1>
+<app-displaytableforinput></app-displaytableforinput>
+
+<br>
+==============================================================================================================
+<br>
+<h1>restcallcomponent works!</h1>
+<app-restcallcomponent></app-restcallcomponent>
+
+
+<br>
+==============================================================================================================
+<br>
+<h1>add update delete details from table!</h1>
+<app-addupddeldtlfromtable></app-addupddeldtlfromtable>

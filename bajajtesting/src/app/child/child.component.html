@@ -1,0 +1,26 @@
+<p>child works!<br>
+    Child Component</p>
+<div class="col-12 col-md-12">
+    <div class="card">
+        <div class="card-header">
+
+
+        </div>
+        <div class="card-body">
+            <div class="order-tracking">
+                <h5>child {{this.cfirstNumber}} and {{this.csecondNumber}}</h5>
+            </div>
+            <button type="button" (click)="onClick()">Ok</button>
+        </div>
+
+        <div class="card-body">
+            <div class="order-tracking">
+                Pruthwiraj
+                <ul>
+                    <li *ngFor="let number of cArr">{{number}}</li>
+                </ul>
+            </div>
+            <button type="button" (click)="createArray()">createArray</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<p>restcallcomponent works!</p>
+
+<table style="border-style: solid;">
+    <tr style="border-style: solid;">
+        <th style="border-style: solid;">id</th>
+
+        <th style="border-style: solid;">departure_location</th>
+        <th style="border-style: solid;">arrival_location</th>
+
+        <th style="border-style: solid;">flight_id</th>
+        <th style="border-style: solid;">flight_number</th>
+        <th style="border-style: solid;">departure_time</th>
+        <th style="border-style: solid;">arrival_time</th>
+    </tr>
+
+    <tr style="border-style: solid;" *ngFor="let fd of listOfFlightAndFlightData;">
+        <td style="border-style: solid;">{{fd.id}}</td>
+        <td style="border-style: solid;">{{fd.departure_location}}</td>
+        <td style="border-style: solid;">{{fd.arrival_location}}</td>
+
+        <td style="border-style: solid;">{{fd.flight_id}}</td>
+        <td style="border-style: solid;">{{fd.flight_number}}</td>
+        <td style="border-style: solid;">{{fd.departure_time}}</td>
+        <td style="border-style: solid;">{{fd.arrival_time}}</td>
+
+    </tr>
+</table>

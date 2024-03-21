@@ -1,0 +1,6 @@
+<p>callservice2 works!</p>
+
+
+<ul *ngFor="let item of list; let i = index">
+    <li (click)="deleteItemFromService(i)" class="bi-trash">{{i}} {{item}}</li>
+</ul>

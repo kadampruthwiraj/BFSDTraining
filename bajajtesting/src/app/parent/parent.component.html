@@ -1,0 +1,27 @@
+<p>parent works!</p>
+
+<div class="col-12 col-md-12">
+    <div class="card">
+        <div class="card-header">
+            Parent Component
+            <br> Array dynamic array
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="order-tracking">
+                    <input #firstNumber1 type="text" placeholder="Enter 1st  number" />
+                    <input #secondNumber1 type="text" placeholder="Enter 2nd number" />
+                    <button type="button" (click)="submit(firstNumber1.value,secondNumber1.value)"
+                        class="btn-btn primary">Submit</button>
+
+                    <h6>parent {{this.firstNumber}} and {{this.secondNumber}}</h6><br>
+                    {{totalPrimeNumber}}
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-child [cfirstNumber]="firstNumber" [csecondNumber]="secondNumber" (getResponse)="getResponse($event)"
+    (totalNumberEmitter)="totalPrimeNumber=($event)"></app-child>

@@ -1,0 +1,21 @@
+<p>learnpipe works!</p>
+
+<p>{{ fname | uppercase }}</p>
+<p>{{ mname | uppercase }}</p>
+<p>{{ lname | titlecase }}</p>
+<P>23.2= {{23.2|custpipe}}</P>
+<P>23.2= {{23.4|custpipe}}</P>
+<P>23.5= {{23.5|custpipe}}</P>
+<P>23.7= {{23.7|custpipe}}</P>
+<P>23.9= {{23.9|custpipe}}</P>
+
+<p> Date:'d/M/y' = {{today|date:'d/M/y'}}</p>
+<p> date:short = {{today|date:'short'}}</p>
+<!-- {{add()}} -->
+
+
+<ul *ngFor="let item of listOfPerson;">
+    <li>
+        {{item.name}}-{{item.gender|custgender}}-{{item.age}}
+    </li>
+</ul>
